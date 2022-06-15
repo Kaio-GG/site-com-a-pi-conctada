@@ -6,7 +6,7 @@ const comando =`
 insert into tb_usuario (nm_usuario , ds_email , ds_senha )
 		        values (  ? , ? , ? )
 `
-const [resposta] = await con.query (comando, [usuario.nome ,usuario.email ,usuario.email , usuario.senha])
+const [resposta] = await con.query (comando, [usuario.nome , usuario.email , usuario.email , usuario.senha])
 usuario.id = resposta.insertId   
 return usuario
 }
