@@ -35,13 +35,11 @@ server.post('/usuario', async (req,resp) => {
 
 server.post('/usuario/login', async (req,resp) => {
     try {
-        const {email,senha} = req.body
+        const { email , senha} = req.body
     
         const resposta = await login(email , senha)   
-        if(!resposta)
-        {
-            throw new Error ('credenciais invalidas')
-        }
+        
+
         resp.send(resposta)
     
     
@@ -68,12 +66,4 @@ server.put ('/usuario/:id/capa', upload.single('capa') , async (req,resp) => {
         })
     }
 })
-
-
-
-
-
-
-
-
 export default server

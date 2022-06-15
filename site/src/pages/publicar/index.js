@@ -19,7 +19,8 @@ async function salvarclick(){
         const usuario = storage('usuario-logado').id
         const r = await novoanuncio(usuario , nome, valor , tipo , contato , descricao )
         
-    } catch (err) {
+        alert('anuncio publicado')
+        } catch (err) {
         alert(err.message)
     }
 
@@ -69,7 +70,6 @@ return(
                 <h3>Coloque a descrição do produto:</h3>
                 <textarea className="te-3" type="text" value={descricao} onChange={e => setdescricao(e.target.value)}/>
                 <div>
-                {resp}
                 </div>
                 <button className="btn-f1" onClick={salvarclick}>PRONTO</button>
             </div>

@@ -18,7 +18,7 @@ export async function enviarimage(id , imagem){
     const formData= new FormData()
     formData.append('capa', imagem) 
      
-    const resposta = await axios.put(`/usuario/${id}/capa`, formData , {headers : {"Content-Type":"multipart/form-data"}})
+    const resposta = await api.put(`/usuario/${id}/capa`, formData , {headers : {"Content-Type":"multipart/form-data"}})
     
-    return resposta.status
-    }
+return resposta.status
+}
