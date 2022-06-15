@@ -4,7 +4,7 @@ import './index.scss'
 import  { useEffect, useState } from 'react';
 
 
-export default function index (){
+export default function Index (){
     document.title = 'Menu do usuario'
     const [usuario,setusuario]= useState('')
 
@@ -31,10 +31,9 @@ export default function index (){
         <div className="mae-usuario">
         <div className="cabeçalho">
             <div className="cbl_org">
-            <img  src="../../assets/image/foto-usuario.svg" className="img" alt=""/>
             <div className="tl-1">
                 {usuario}
-                <div className="linha"></div>
+            <div className="linha"></div>
             </div>
             </div>
             <div className="btns">

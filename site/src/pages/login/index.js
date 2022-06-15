@@ -8,7 +8,7 @@ import { login } from '../../api/usuarioapi.js';
 
 
 
-export default  function index() {
+export default  function Index() {
     document.title = 'Login'
 
     const [ email , setemail ] = useState ('');
@@ -18,22 +18,19 @@ export default  function index() {
     const navigate = useNavigate()
 
 
-    async function entrarclick(){
-        try { 
-        const r = await login (email ,senha)
+async function entrarclick(){
+    try { 
+    const r = await login (email ,senha)
 
-        storage('usuario-logado', r)    
-
-
+        storage('usuario-logado', r)
+            
         navigate('/usuario')
-        }catch (err) {
-            if(err.response.status === 401){
-                seterro(err.response.data.erro)
-            }
+    }catch (err) {
+        if(err.response.status === 401){
+            seterro(err.response.data.erro)
         }
-    
-    
     }
+}
 
 
     return(
@@ -76,7 +73,6 @@ export default  function index() {
        
     </div>
     </div>
-        </div>
-    );
-    
-}//
+</div>
+);
+}

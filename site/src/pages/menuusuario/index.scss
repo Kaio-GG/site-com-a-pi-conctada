@@ -13,7 +13,6 @@
     background-color: #EDEDED;
     width: 100%;
     box-shadow: 2px 5px 5px #A59F9F;
-    height: 200px;
 }
 .btn1{
     display: flex;
@@ -28,6 +27,7 @@
     margin-top: 10px;
     font-family: "fonte1";
     font-size: 16px;
+    margin-bottom: 10px;
 }
 .cbl_org{
     display: flex;
@@ -35,6 +35,7 @@
     align-items: flex-end;
     margin-left: 5%;
     width: 50%;
+    margin-bottom: 1%;
 }
 .linha{
     border: 1px solid black;
@@ -51,16 +52,16 @@ p{
    
 }
 .tl{
-margin-top: 5%;
+margin-top: 3%;
 width: 12%;
 font-family: "fonte1";
+
 margin-left: 2%;
 }
 .tl-1{
     margin-top: 5%;
-    margin-left: 10%;
-    width: 30%;
     font-family: "fonte1";
+    font-size: 40px;
     }
 .body{
 display: flex;

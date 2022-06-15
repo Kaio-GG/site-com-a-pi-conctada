@@ -79,7 +79,6 @@ display: flex;
 flex-direction: column;
 width: 1000px;
 border-radius: 5px;
-height: 800px;
 display: flex;
 flex-direction: column;
 border-radius: 20px;
@@ -149,6 +148,7 @@ font-family: "fonte1";
 .org{
 display: flex;
 flex-direction: row;
+align-items: flex-end;
 }
 .caixas{
 margin-right: 100px;

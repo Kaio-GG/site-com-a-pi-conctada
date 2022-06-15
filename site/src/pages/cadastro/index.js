@@ -12,7 +12,6 @@ export default function Cadastro() {
 const  [ nome , setnome ] = useState ('');
 const  [ email , setemail ] = useState ('');
 const  [ senha , setsenha ] = useState ('');
-const  [image ,setimage]= useState()
 const  [erro ,seterro]= useState('')
 
 
@@ -21,8 +20,8 @@ const navigate = useNavigate()
 
 async function entrarclick(){
     try {
-        const novocadastro = await cadastro(nome , email , senha)
-        //const r = await enviarimage(novocadastro.id, image)
+        const novocadastro = await cadastro (nome , email , senha)
+
         storage('usuario-logado', novocadastro)    
         navigate('/usuario')
     } catch (err) {
@@ -31,15 +30,6 @@ async function entrarclick(){
         }
     }
 }
-
-function inseririmage(){
-document.getElementById('imageusuario').click()
-}
-
-function mostrarimagem(){
-    return URL.createObjectURL(image)
-}
-
 
 
     return(
@@ -58,20 +48,6 @@ function mostrarimagem(){
         <div className="body">
             <div className="faixa">
                 <h1 className="text">CADASTRO</h1>
-                <p className="text">
-                    PORQUE SE CADATRAR ? <br/>
-                <br/>
-                SE VOCE TEM VONTADE DE ANUNCIAR SEUS PRODUTOS <br/> 
-                <br/>
-                OU VIZUALIZAR PROMOÇÕES QUE SE ENCAIXAM NO SEU <br/>
-                <br/>
-                PERFIL DE COMPRA , COM O SEU CADASTRO ISSO É <br/>
-                <br/>
-                POSSIVEL . VOCE PRECISA APENAS COLOCAR SUAS <br/>
-                <br/>
-                INFORMAÇÕES NOS CAMPOS ABAIXO : <br/>
-                <br/>
-                </p>
             <div className="org">
                 <div  className="caixas">
                     <p>NOME</p>
@@ -83,26 +59,19 @@ function mostrarimagem(){
                 </div>
             
             <div className="caixa-2">
-                <h3 className="text">IMAGEM DO USUARIO</h3>
-               <div onClick={inseririmage}>
-                {!image &&
-                <img className="img" src="../../assets/image/foto-usuario.svg"  alt=""/>
-                }
-                {image &&
-                <img src={mostrarimagem} alt="" className="img"/>
-                }
-                <input type='file' id='imageusuario' onChange={e=>setimage(e.target.files[0])}/>
-                </div>
+                
                 <button className='btnp' onClick={entrarclick}>
                     PRONTO
                 </button>
+                
                 <div className="erro">
                     {erro}
+                </div>
                 </div>
             </div>
         </div>
         </div>
         </div>
-    </div>
+   
     );   
 }
