@@ -1,7 +1,7 @@
-/////ENPIONTS/////
+/////ENDPOINTS/////
 
 
-/////ENPIONTS-USUARIO/////
+/////ENDPOINTS-USUARIO/////
 
 
 (1)
@@ -42,7 +42,7 @@ response
     "nome" :  ""
 }
 
-/////ENPIONTS-ANUNCIO/////
+/////ENDPOINTS-ANUNCIO/////
 
 
 (3)

@@ -14,10 +14,10 @@ select id_usuario 		id,
    and ds_senha			= '1234';
      
      
--- CSU02:: efetuar anuncio
  insert into tb_anuncio (id_usuario ,nm_anuncio , ds_telefone, ds_valor ,ds_tipo ,ds_descricao )
 			values(1, 'LG velvet 2', '11 957478957', 1200.00 ,'Celular','Celular bom ');
 
+-- CSU02:: efetuar anuncio
 select id_anuncio		    id,
 		  id_usuario,
        nm_anuncio		    nome,

@@ -3,8 +3,8 @@ import {con} from './connection.js'
 
 export async function novoUsuario (usuario){
 const comando =`
-insert into tb_usuario(nm_usuario,ds_email , ds_senha )
-		values(  ? , ? , ? )
+insert into tb_usuario (nm_usuario , ds_email , ds_senha )
+		        values (  ? , ? , ? )
 `
 const [resposta] = await con.query (comando, [usuario.nome ,usuario.email ,usuario.email , usuario.senha])
 usuario.id = resposta.insertId   
@@ -13,9 +13,9 @@ return usuario
 
 export async function login ( email , senha ){
     const comando =
-    `select id_usuario 		id,
-        nm_usuario		    nome,
-        ds_email			email,
+    `select id_usuario 		    id,
+        nm_usuario		        nome,
+        ds_email			    email,
         img_usuario
         from tb_usuario
         where ds_email 		    = ?

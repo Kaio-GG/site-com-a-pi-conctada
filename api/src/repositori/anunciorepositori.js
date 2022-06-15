@@ -1,8 +1,8 @@
 import { con } from "./connection.js";
 
 export async function inseriranuncio (anuncio){
-const comando =` insert into tb_anuncio (id_usuario ,  nm_anuncio , ds_telefone, ds_valor ,ds_tipo ,ds_descricao )
-                             values     ( ? , ? , ? , ? , ? , ? ) `
+const comando =` insert into tb_anuncio (id_usuario ,  nm_anuncio , ds_telefone , ds_valor , ds_tipo , ds_descricao )
+                                values ( ? , ? , ? , ? , ? , ? ) `
 const [resposta] = await con.query (comando, [anuncio.usuario ,anuncio.nome ,anuncio.telefone, anuncio.valor,  anuncio.tipo,  anuncio.descricao ])
 anuncio.id = resposta.insertId   
 return anuncio
@@ -12,12 +12,12 @@ return anuncio
 export async function alteraranuncio (id , anuncio){
 const comando =`
 update tb_anuncio
-set nm_anuncio  = ?,
-	ds_valor    = ?,
-	ds_tipo	    = ?,
-	ds_telefone = ?,
-    ds_descricao= ? 
-where id_anuncio = ?   
+set nm_anuncio      = ?,
+	ds_valor        = ?,
+	ds_tipo	        = ?,
+	ds_telefone     = ?,
+    ds_descricao    = ?
+where id_anuncio    = ?   
 `
 const [resposta] = await con.query (comando, [anuncio.nome ,  anuncio.valor , anuncio.tipo , anuncio.telefone , anuncio.descricao , id    ])
 return resposta.affectedRows
